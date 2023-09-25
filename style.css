@@ -8,17 +8,18 @@ body {
 }
 .container {
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: grid;
   place-items: center;
 }
 
-.form-container {
-  /* border: 1px solid blue; */
-}
+/* .form-container {
+ 
+} */
 .form-container form {
   display: flex;
   flex-direction: column;
+  padding: 4rem 1rem;
 }
 .form-container form label {
   margin-bottom: 0.5rem;

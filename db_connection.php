@@ -1,9 +1,5 @@
 <?php
 // <!-- DB Credentials -->
-
-
-
-
 function db_connect() {
 
 $servername = "localhost";
