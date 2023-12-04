@@ -5,12 +5,20 @@
 }
 body {
   background-color: rgb(205, 222, 247);
+  font-family: "Roboto", sans-serif;
 }
 .container {
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: grid;
   place-items: center;
+}
+.form-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgb(2, 49, 201);
+  margin-bottom: 2rem;
 }
 
 /* .form-container {
@@ -19,21 +27,31 @@ body {
 .form-container form {
   display: flex;
   flex-direction: column;
-  padding: 4rem 1rem;
+  padding: 0 1rem;
 }
 .form-container form label {
-  margin-bottom: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
   font-size: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 500;
+  font-weight: 400;
+  color: rgb(7, 0, 102);
 }
 .form-container form input {
   width: 500px;
   padding: 0.9rem;
-  border: none;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   border-radius: 0.2rem;
   font-size: 1rem;
+  box-shadow: none;
+  outline: none;
+  border: 2px solid #ffffff00;
+}
+.form-container form input:focus {
+  border: 2px solid rgb(0, 34, 145) !important;
+  box-shadow: none;
+  outline: none;
+}
+.star {
+  color: red;
 }
 #submit-btn {
   background-color: rgb(8, 94, 223);
@@ -41,4 +59,16 @@ body {
   font-size: 1rem;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.3s ease-in;
+  margin: 2rem 0;
+}
+#submit-btn:hover {
+  background-color: rgb(0, 67, 168);
+}
+#searchMessage {
+  color: rgb(0, 91, 211);
+  font-weight: 500;
+}
+.error {
+  color: red;
 }

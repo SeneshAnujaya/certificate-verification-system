@@ -17,68 +17,80 @@ function validateForm(event) {
     if(certificateNumber.trim() == '') {
         displayError("cert-error", "Certificate Number is required.");
         isValid = false;
-    } else {
-        // check cerificate number availble in db
-       
+    } 
+
+    // Validate Certificate Number
+    const achievDate = document.getElementById('date').value;
+    if(achievDate.trim() == '') {
+        displayError("date-error", "Achievement date is required.");
+        isValid = false;
     }
-
-     // validate Date
-     const formDate = document.getElementById('date').value;
-     if(formDate.trim() == '') {
-         displayError("date-error", "Date is required.");
-         isValid = false;
-     }
-
+     
     if(isValid) {
         document.getElementById('cert-form').submit();
-        alert('submit');
+        
     }
 }
 
 
+function validateAdminForm(e) {
+    e.preventDefault();
+    clearErrors();
 
-// function checkAvailable (values) {
+    let isValid = true;
+
+    //Student Name
+    const name = document.getElementById('student-name').value;
+    if (name.trim() == '') {
+        displayError("student-error", "Student name is required.");
+        isValid = false;
+    }
+
+    // Validate Certificate Number
+    const certificateNumber = document.getElementById('admin-cert-number').value;
+    if(certificateNumber.trim() == '') {
+        displayError("admin-cert-error", "Certificate Number is required.");
+        isValid = false;
+    }
+
+    if(isValid) {
+        document.getElementById('ad-cert-form').submit();
+        // alert('submit');
+    }
+
     
-    // if(values.length === 5) {
+}
 
-    //   const  requestData = { certificateNumber :values}
+// Valdiate Login Form 
+function validateLogin(event) {
+    
+    event.preventDefault();
+    clearErrors();
 
-    //     fetch('verification.php', {
-    //         method: "POST",
-    //         body: JSON.stringify(requestData),
-    //         headers: {
-    //             'Content-Type' : 'application/json',
-    //         }
-    //     })
-    //     .then(response => console.log(response.json()))
-    //     .then(data => {
-            
-    //         if(data.exists) {
-    //             displayError("cert-error", "Certificate number already exist.");
-    //         } else {
-    //             displayError("cert-error", "Certificate number available.");
-                
-    //         }
-    //     })
-    //     .catch(error => {
-            // console.error('Error:', error);
-//         });
-//     } else {
-//         clearErrors();
-//     }
-// }
-document.addEventListener('DOMContentLoaded', function() {
+    let isValid = true;
 
-    document.getElementById('certificate').addEventListener('keyup', function() {
+    // Username 
+    const username = document.getElementById('username').value;
+    if(username.trim() == "") {
+        displayError("username-error", "Username name is required.");
+        isValid = false;
+    }
 
-        const testNumber = "12345";
-        checkAvailable(testNumber);
-    })
-})
+    // Password
+    const password = document.getElementById('ad-password').value;
+    if(password.trim() == "") {
+        displayError("password-error", "Password is required.");
+        isValid = false;
+    }
+
+    if(isValid) {
+        document.getElementById('login-form').submit();
+    }
+
+}
 
 
-
-    function displayError(id, message) {
+function displayError(id, message) {
         const error = document.getElementById(id);
         error.textContent = message;
     }
